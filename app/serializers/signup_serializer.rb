@@ -1,5 +1,5 @@
 class SignupSerializer < ActiveModel::Serializer
-  attributes :id, :time
-  has_one :activity
-  has_one :camper
+  # attributes :id
+  has_one :activity, serializer: PostSignupSerializer
+  # has_one :camper
 end
