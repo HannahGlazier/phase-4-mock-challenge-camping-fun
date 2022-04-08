@@ -2,14 +2,13 @@ class CampersController < ApplicationController
 
     # GET /campers
     def index
-        campers = Camper.all
-        render json: campers, except: :activity
+        render json: Camper.all
     end
 
     # GET /campers/:id
     def show
         camper = Camper.find(params[:id])
-        render json: camper
+        render json: camper, serializer: GetIdCamperSerializer
     end
 
     #POST /campers

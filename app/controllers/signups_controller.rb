@@ -3,7 +3,7 @@ class SignupsController < ApplicationController
     #POST /signups
     def create
         signup = Signup.create!(signup_params)
-        render json: signup, status: :created
+        render json: signup.activity, status: :created
     end
 
     private
